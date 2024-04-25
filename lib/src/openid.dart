@@ -318,6 +318,16 @@ class Credential {
     return _token;
   }
 
+  // Return accessToken directly
+  String? getAccessToken() {
+    if (_token.accessToken != null) {
+      return _token.accessToken;
+    }
+    else {
+      throw "Access token not present";
+    }
+  }
+
   /// Updates the token with the given [json] and notifies all listeners
   /// of the new token.
   ///
